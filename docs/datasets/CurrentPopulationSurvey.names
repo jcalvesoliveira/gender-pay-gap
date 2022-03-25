@@ -1,0 +1,777 @@
+
+1. Title: CurrentPopulationSurvey
+
+2. Sources:
+    ----------------EXAMPLE--------------------------------------
+   (a) Creator: Marko Bohanec
+   (b) Donors: Marko Bohanec   (marko.bohanec@ijs.si)
+               Blaz Zupan      (blaz.zupan@ijs.si)
+   (c) Date: June, 1997
+    ----------------EXAMPLE--------------------------------------
+
+3. Past Usage:
+
+    ----------------EXAMPLE--------------------------------------
+   The hierarchical decision model, from which this dataset is
+   derived, was first presented in 
+
+   M. Bohanec and V. Rajkovic: Knowledge acquisition and explanation for
+   multi-attribute decision making. In 8th Intl Workshop on Expert
+   Systems and their Applications, Avignon, France. pages 59-78, 1988.
+
+   Within machine-learning, this dataset was used for the evaluation
+   of HINT (Hierarchy INduction Tool), which was proved to be able to
+   completely reconstruct the original hierarchical model. This,
+   together with a comparison with C4.5, is presented in
+
+   B. Zupan, M. Bohanec, I. Bratko, J. Demsar: Machine learning by
+   function decomposition. ICML-97, Nashville, TN. 1997 (to appear)
+   ----------------EXAMPLE--------------------------------------
+
+4. Relevant Information Paragraph:
+
+   ----------------EXAMPLE--------------------------------------
+   Car Evaluation Database was derived from a simple hierarchical
+   decision model originally developed for the demonstration of DEX
+   (M. Bohanec, V. Rajkovic: Expert system for decision
+   making. Sistemica 1(1), pp. 145-157, 1990.). The model evaluates
+   cars according to the following concept structure:
+
+   CAR                      car acceptability
+   . PRICE                  overall price
+   . . buying               buying price
+   . . maint                price of the maintenance
+   . TECH                   technical characteristics
+   . . COMFORT              comfort
+   . . . doors              number of doors
+   . . . persons            capacity in terms of persons to carry
+   . . . lug_boot           the size of luggage boot
+   . . safety               estimated safety of the car
+
+   Input attributes are printed in lowercase. Besides the target
+   concept (CAR), the model includes three intermediate concepts:
+   PRICE, TECH, COMFORT. Every concept is in the original model
+   related to its lower level descendants by a set of examples (for
+   these examples sets see http://www-ai.ijs.si/BlazZupan/car.html).
+
+   The Car Evaluation Database contains examples with the structural
+   information removed, i.e., directly relates CAR to the six input
+   attributes: buying, maint, doors, persons, lug_boot, safety.
+
+   Because of known underlying concept structure, this database may be
+   particularly useful for testing constructive induction and
+   structure discovery methods.
+   ----------------EXAMPLE--------------------------------------
+
+5. Number of Instances: 344287
+   (instances completely cover the attribute space)
+
+6. Number of Attributes: 234
+
+7. Attribute Values:
+
+   year: 1990, 2009, 1981, 1999, 2007, 2011, 2013
+   serial: 9677, 64923, 8425, 67963, 38650, 63841, 25381, 56727, 28603, ...
+   numprec: 1, 4, 9, 5, 2, 3, 7, 8, 6, ...
+   hwtsupp: 1052.650024, 971.2000122, 1622.280029, 2689.909912, 1911.900024, 1858.47998, 1488.300049, 1889.73999, 609.0800171, ...
+   gq: 1
+   region: 12, 33, 42, 31, 21, 11, 32, 41, 22
+   statefip: 36, 5, 6, 51, 17, 48, 10, 50, 44, ...
+   metro: 2.0, 3.0, 4.0, 1.0, nan
+   metarea: 5607.0, nan, 7400.0, 8840.0, 680.0, 1605.0, 1920.0, 9160.0, 1311.0, ...
+   county: nan, 6029.0, 10003.0, 42091.0, 6037.0, 42029.0, 6111.0, 12033.0, 12009.0, ...
+   farm: 1.0, nan, 2.0
+   month: 3
+   pernum: 1, 4, 2, 3, 7, 6, 5, 8, 12, ...
+   wtsupp: 1052.650024, 1288.880005, 1622.280029, 2689.909912, 1911.900024, 1858.47998, 1488.300049, 1889.73999, 609.0800171, ...
+   relate: 101, 1260, 201, 1114, 301, 1001, 1115, 501, 1241, ...
+   age: 58, 28, 37, 34, 38, 44, 32, 41, 55, ...
+   sex: 1, 2
+   race: 3, 1, 4, 2
+   marst: 6, 1, 3, 4, 5, 2
+   popstat: 1
+   bpl: nan, 9900.0, 20000.0, 15000.0, 52100.0, 30005.0, 11000.0, 46500.0, 30015.0, ...
+   yrimmig: nan, 1997.0, 1981.0, 1985.0, 1995.0, 1999.0, 1991.0, 2001.0, 2003.0, ...
+   citizen: nan, 3.0, 2.0, 1.0
+   mbpl: nan, 9900.0, 20000.0, 15000.0, 52100.0, 11000.0, 45213.0, 30005.0, 41400.0, ...
+   fbpl: nan, 9900.0, 20000.0, 15000.0, 52100.0, 30065.0, 11000.0, 30005.0, 45730.0, ...
+   nativity: nan, 1.0, 5.0, 2.0, 4.0, 3.0
+   hispan: 1.0, 0.0, nan
+   sch: 12.0, 14.0, 18.0, 13.0, 16.0, 7.0, 11.0, 9.0, 10.0, ...
+   educ99: nan, 10.0, 11.0, 15.0, 18.0, 13.0, 8.0, 16.0, 6.0, ...
+   schlcoll: nan, 5.0, 4.0, 3.0, 2.0, 1.0
+   empstat: 10, 12
+   labforce: 2
+   occ: 335, 5120, 217, 64, 245, 424, 7750, 243, 308, ...
+   occ1990: 335, 337, 217, 64, 22, 423, 785, 243, 308, ...
+   ind1990: 871.0, 762.0, 380.0, 732.0, 791.0, 910.0, 351.0, 751.0, 410.0, ...
+   occ1950: 390, 310, 35, 99, 290, 763, 690, 341, 970, ...
+   ind: 871, 8660, 380, 740, 798, 910, 3570, 751, 410, ...
+   ind1950: 896, 836, 387, 808, 849, 936, 376, 816, 526, ...
+   classwkr: 28, 21, 10, 27, 24, 25, 29
+   occly: 335, 5120, 217, 64, 153, 424, 7750, 243, 308, ...
+   occ50ly: 390, 310, 35, 99, 95, 763, 690, 290, 341, ...
+   indly: 871, 8660, 380, 740, 539, 910, 3570, 751, 410, ...
+   ind50ly: 896.0, 836.0, 387.0, 808.0, 617.0, 936.0, 376.0, 816.0, 526.0, ...
+   classwly: 28, 22, 27, 25, 14, 29
+   wkswork1: 52, 47, 44, 50, 40, 14, 48, 49, 26, ...
+   wkswork2: 6, 4, 2, 5, 3, 1
+   hrswork: 35.0, 40.0, 50.0, 80.0, 24.0, 48.0, nan, 43.0, 42.0, ...
+   uhrswork: 35, 40, 45, 80, 48, 50, 43, 60, 44, ...
+   union: 0.0, 1.0, nan, 2.0, 3.0
+   incwage: 14200.0, 17680.0, 28000.0, 27500.0, 17000.0, 42000.0, 33000.0, 30000.0, 67000.0, ...
+   incbus: 0
+   incfarm: 0
+   inclongj: 14200.0, 17680.0, 28000.0, 22000.0, nan, 42000.0, 17000.0, 30000.0, 67000.0, ...
+   oincwage: 0.0, 5500.0, nan, 16000.0, 8000.0, 3000.0, 2500.0, 2000.0, 15000.0, ...
+   srcearn: 1.0, nan, 4.0
+   ftype: 2, 5, 1, 3, 4
+   quhrswor: 0.0, nan, 1.0
+   qwkswork: 0.0, nan, 1.0
+   qincbus: 0, 2, 3
+   qincfarm: 0, 2
+   qinclong: 0.0, nan
+   qincwage: 0
+   qsrcearn: 0.0, nan
+   o_numprec: 1, 4, 9, 5, 2, 3, 7, 8, 6, ...
+   o_hwtsupp: 1052.650024, 971.2000122, 1622.280029, 2689.909912, 1911.900024, 1858.47998, 1488.300049, 1889.73999, 609.0800171, ...
+   o_gq: 1
+   o_region: 12, 33, 42, 31, 21, 11, 32, 41, 22
+   o_statefip: 36, 5, 6, 51, 17, 48, 10, 50, 44, ...
+   o_metro: 2, 3, 4, 1, 0
+   o_metarea: 5607, 9999, 7400, 8840, 680, 1605, 1920, 9160, 1311, ...
+   o_county: nan, 0.0, 6029.0, 10003.0, 42091.0, 6037.0, 42029.0, 6111.0, 12033.0, ...
+   o_farm: 1.0, nan, 2.0
+   o_month: 3
+   o_pernum: 1, 4, 2, 3, 7, 6, 5, 8, 12, ...
+   o_wtsupp: 1052.650024, 1288.880005, 1622.280029, 2689.909912, 1911.900024, 1858.47998, 1488.300049, 1889.73999, 609.0800171, ...
+   o_relate: 101, 1260, 201, 1114, 301, 1001, 1115, 501, 1241, ...
+   o_age: 58, 28, 37, 34, 38, 44, 32, 41, 55, ...
+   o_sex: 1, 2
+   o_race: 100, 700, 200, 801, 650, 651, 300, 809, 803, ...
+   o_marst: 6, 1, 3, 4, 5, 2
+   o_popstat: 1
+   o_bpl: nan, 9900.0, 20000.0, 15000.0, 52100.0, 30005.0, 11000.0, 46500.0, 30015.0, ...
+   o_yrimmig: nan, 0.0, 1997.0, 1981.0, 1985.0, 1995.0, 1999.0, 1991.0, 2001.0, ...
+   o_citizen: nan, 0.0, 3.0, 2.0, 1.0
+   o_mbpl: nan, 9900.0, 20000.0, 15000.0, 52100.0, 11000.0, 45213.0, 30005.0, 41400.0, ...
+   o_fbpl: nan, 9900.0, 20000.0, 15000.0, 52100.0, 30065.0, 11000.0, 30005.0, 45730.0, ...
+   o_nativity: nan, 1.0, 5.0, 2.0, 4.0, 3.0, 0.0
+   o_hispan: 200, 0, 102, 108, 100, 410, 901, 104, 300, ...
+   o_educ: 72, 73, 100, 122, 90, 81, 111, 31, 125, ...
+   o_educ99: nan, 10.0, 11.0, 15.0, 18.0, 13.0, 8.0, 16.0, 6.0, ...
+   o_schlcoll: 0.0, nan, 5.0, 4.0, 3.0, 2.0, 1.0
+   o_empstat: 10, 12
+   o_labforce: 2
+   o_occ: 335, 5120, 217, 64, 245, 424, 7750, 243, 308, ...
+   o_occ1990: 335, 337, 217, 64, 22, 423, 785, 243, 308, ...
+   o_ind1990: 871, 762, 380, 732, 791, 910, 351, 751, 410, ...
+   o_occ1950: 390, 310, 35, 99, 290, 763, 690, 341, 970, ...
+   o_ind: 871, 8660, 380, 740, 798, 910, 3570, 751, 410, ...
+   o_ind1950: 896, 836, 387, 808, 849, 936, 376, 816, 526, ...
+   o_classwkr: 28, 21, 10, 27, 24, 25, 29
+   o_occly: 335, 5120, 217, 64, 153, 424, 7750, 243, 308, ...
+   o_occ50ly: 390, 310, 35, 99, 95, 763, 690, 290, 341, ...
+   o_indly: 871, 8660, 380, 740, 539, 910, 3570, 751, 410, ...
+   o_ind50ly: 896, 836, 387, 808, 617, 936, 376, 816, 526, ...
+   o_classwly: 28, 22, 27, 25, 14, 29
+   o_wkswork1: 52, 47, 44, 50, 40, 14, 48, 49, 26, ...
+   o_wkswork2: 6, 4, 2, 5, 3, 1
+   o_hrswork: 35, 40, 50, 80, 24, 48, 0, 43, 42, ...
+   o_uhrswork: 35, 40, 45, 80, 48, 50, 43, 60, 44, ...
+   o_union: 0.0, 1.0, nan, 2.0, 3.0
+   o_incwage: 14200.0, 17680.0, 28000.0, 27500.0, 17000.0, 42000.0, 33000.0, 30000.0, 67000.0, ...
+   o_incbus: 0
+   o_incfarm: 0
+   o_inclongj: 14200.0, 17680.0, 28000.0, 22000.0, nan, 42000.0, 17000.0, 30000.0, 67000.0, ...
+   o_oincwage: 0.0, 5500.0, nan, 16000.0, 8000.0, 3000.0, 2500.0, 2000.0, 15000.0, ...
+   o_srcearn: 1.0, nan, 4.0
+   o_ftype: 2, 5, 1, 3, 4
+   o_quhrswor: 0.0, nan, 1.0
+   o_qwkswork: 0.0, nan, 1.0
+   o_qincbus: 0, 2, 3
+   o_qincfarm: 0, 2
+   o_qincwage: 0
+   origrace: 100, 700, 200, 801, 650, 651, 300, 809, 803, ...
+   white: 0, 1
+   black: 0, 1
+   hisp: 1, 0
+   othrace: 0, 1
+   educorig: 72, 73, 100, 122, 90, 81, 111, 31, 125, ...
+   ba: 0, 1
+   adv: 0, 1
+   groupquar: 0
+   potexp: 40, 10, 17, 19, 18, 22, 14, 23, 37, ...
+   potexp2: 1600, 100, 289, 361, 324, 484, 196, 529, 1369, ...
+   selfemp: 0
+   military: 0
+   employed: 1
+   annhrs: 1820, 2080, 2115, 4160, 2496, 2600, 2236, 3120, 1760, ...
+   ft: 1, 0
+   niincwage: 14200.0, 17680.0, 28000.0, 27500.0, 17000.0, 42000.0, 33000.0, 30000.0, 67000.0, ...
+   incwageman: 14200.0, 17680.0, 28000.0, 27500.0, 17000.0, 42000.0, 33000.0, 30000.0, 67000.0, ...
+   tcoincwage: 0.0, 5500.0, nan, 16000.0, 8000.0, 3000.0, 2500.0, 2000.0, 15000.0, ...
+   tcinclongj: 14200.0, 17680.0, 28000.0, 22000.0, nan, 42000.0, 17000.0, 30000.0, 67000.0, ...
+   tcincwage: 14200.0, 17680.0, 28000.0, 27500.0, 17000.0, 42000.0, 33000.0, 30000.0, 67000.0, ...
+   hrwage: 7.802197933, 8.5, 13.46153831, 13.00236416, 8.17307663, 20.19230843, 7.932692528, 11.21794891, 14.42307663, ...
+   perconexp: 64.63999939, 100.0630035, 43.97700119, 79.93399811, 94.72799683, 101.6539993, 106.0090027
+   expendbase10: 101.6539993
+   inflate: 1.572617531, 1.015899897, 2.311526299, 1.271724224, 1.073114634, 1.0, 0.958918571
+   realhrwage: 12.26987362, 8.635149002, 21.1698513, 20.44774628, 18.89228249, 25.67904854, 8.512688637, 17.64154243, 18.34217644, ...
+   uncenrealhrwage: 12.26987362, 8.635149002, 21.1698513, 20.44774628, 18.89228249, 25.67904854, 8.512688637, 17.64154243, 18.34217644, ...
+   lnrwg: 2.507147074, 2.155840874, 3.052577972, 3.017872572, 2.938753605, 3.245675325, 2.141557932, 2.870256424, 2.909203053, ...
+   hdwfcoh: 1, 0
+   notalloc: 1
+   basesamp: 1
+   wagesamp: 1, 0
+   occ_orig: 335, 5120, 217, 64, 245, 424, 7750, 243, 308, ...
+   adj_occ: 526.0, 512.0, 154.0, 102.0, 43.0, 380.0, 775.0, 470.0, 580.0, ...
+   occ_2010_orig: nan, 9620.0, 2000.0, 3255.0, 220.0, 6240.0, 1560.0, 410.0, 9130.0, ...
+   ind_orig: 871, 8660, 380, 740, 798, 910, 3570, 751, 410, ...
+   adj_ind: 837, 866, 309, 738, 749, 947, 357, 877, 617, ...
+   ind_2002_orig: nan, 3570.0, 5070.0, 9570.0, 4670.0, 7460.0, 3070.0, 6690.0, 2980.0, ...
+   ind_2007_orig: nan, 8660.0, 8190.0, 4490.0, 7870.0, 8090.0, 770.0, 9590.0, 7290.0, ...
+   occ_81: nan, 245.0, 470.0, 715.0, 485.0, 13.0, 694.0, 751.0, 126.0, ...
+   ind_81: nan, 798.0, 339.0, 417.0, 857.0, 917.0, 118.0, 68.0, 858.0, ...
+   occ_2000female: nan, 470.0, 731.0, 913.0, 702.0, 143.0, 896.0, 626.0, 220.0, ...
+   unmatched_fem_81: nan
+   occ_2000male: nan, 43.0, 731.0, 913.0, 742.0, 143.0, 895.0, 626.0, 220.0, ...
+   unmatched_male_81: nan
+   ind_2000: nan, 749.0, 199.0, 617.0, 786.0, 959.0, 389.0, 77.0, 787.0, ...
+   occ2000_81: nan, 43.0, 731.0, 913.0, 742.0, 143.0, 895.0, 626.0, 220.0, ...
+   ind2000_81: nan, 749.0, 199.0, 617.0, 786.0, 959.0, 389.0, 77.0, 787.0, ...
+   occ_1990: 335.0, nan, 217.0, 64.0, 243.0, 877.0, 357.0, 825.0, 76.0, ...
+   ind_1990: 871.0, nan, 380.0, 732.0, 751.0, 601.0, 921.0, 400.0, 50.0, ...
+   occ_1999: nan, 424.0, 308.0, 717.0, 13.0, 869.0, 804.0, 53.0, 229.0, ...
+   ind_1999: nan, 910.0, 410.0, 351.0, 391.0, 60.0, 882.0, 732.0, 192.0, ...
+   unmatched_occ_90: nan
+   occ2000_90: 526.0, nan, 154.0, 102.0, 470.0, 562.0, 551.0, 923.0, 174.0, ...
+   unmatched_ind_90: nan
+   ind2000_90: 837.0, nan, 309.0, 738.0, 877.0, 497.0, 938.0, 608.0, 47.0, ...
+   indname2000_90: Individual and family services, nan, Commercial and service industry machinery manufacturing, Computer systems design and related services, Automotive repair and maintenance, Grocery stores, Public finance activities, Rail transportation, Nonmetallic mineral mining and quarrying, ...
+   unmatched_occ_99: nan
+   occ2000_99: nan, 380.0, 580.0, 822.0, 5.0, 626.0, 913.0, 136.0, 101.0, ...
+   unmatched_ind_99: nan
+   ind2000_99: nan, 947.0, 617.0, 357.0, 398.0, 77.0, 729.0, 738.0, 229.0, ...
+   indname2000_99: nan, Justice, public order, and safety activities, Truck transportation, Motor vehicles and motor vehicle equipment manufacturing, Miscellaneous manufacturing, n.e.c., Construction, Architectural, engineering, and related services, Computer systems design and related services, Industrial and miscellaneous chemicals, ...
+   un_lnrealwg: 2.507147074, 2.155840874, 3.052577972, 3.017872572, 2.938753605, 3.245675325, 2.141557932, 2.870256424, 2.909203053, ...
+   northeast: 1, 0
+   northcentral: 0, 1
+   south: 0, 1
+   west: 0, 1
+   female: 0, 1
+   adj_ind2: 62, 68, 20, 74, 80, 42, 70, 50, 52, ...
+   adj_occ2: 42, 21, 20, 10, 32, 60, 40, 62, 52, ...
+   adj_occ2name: Office and Admin Support, ., Computer and Math Technicians, Managers, Protective Service adj_occupations, Production, Transportation and materials moving, Consruction, Extraction, Installation, Community and Social Workers, ...
+   Agriculture: 0, 1
+   miningconstruction: 0, 1
+   durables: 0, 1
+   nondurables: 0, 1
+   Transport: 0, 1
+   Utilities: 0, 1
+   Communications: 0, 1
+   retailtrade: 0, 1
+   wholesaletrade: 0, 1
+   finance: 0, 1
+   SocArtOther: 1, 0
+   hotelsrestaurants: 0, 1
+   Medical: 0, 1
+   Education: 0, 1
+   professional: 0, 1
+   publicadmin: 0, 1
+   sumadj_ind: 1
+   manager: 0, 1
+   business: 0, 1
+   financialop: 0, 1
+   computer: 0, 1
+   architect: 0, 1
+   scientist: 0, 1
+   socialworker: 0, 1
+   postseceduc: 0, 1
+   legaleduc: 0, 1
+   artist: 0, 1
+   lawyerphysician: 0, 1
+   healthcare: 0, 1
+   healthsupport: 0, 1
+   protective: 0, 1
+   foodcare: 0, 1
+   building: 0, 1
+   sales: 0, 1
+   officeadmin: 1, 0
+   farmer: 0, 1
+   constructextractinstall: 0, 1
+   production: 0, 1
+   transport: 0, 1
+   sumadj_occ: 1
+   LEHS: 1, 0
+
+
+8. Missing Attribute Values: 11547303
+
+9. Class Distribution (number of instances per class)
+
+
+------------------------------------------------------
+
+   class      indname2000_90          indname2000_90[%]   Individual and family services 389 (0.11 %)
+   nan 0 (0.00 %)
+   Commercial and service industry machinery manufacturing 92 (0.03 %)
+   Computer systems design and related services 329 (0.10 %)
+   Automotive repair and maintenance 247 (0.07 %)
+   Grocery stores 868 (0.25 %)
+   Public finance activities 208 (0.06 %)
+   Rail transportation 161 (0.05 %)
+   Nonmetallic mineral mining and quarrying 71 (0.02 %)
+   Construction mining and oil field machinery manufacturing 105 (0.03 %)
+   Water, steam, air-conditioning, and irrigation systems 126 (0.04 %)
+   Forestry except logging 49 (0.01 %)
+   Postal Service 452 (0.13 %)
+   Construction 2372 (0.69 %)
+   Truck transportation 735 (0.21 %)
+   Structural metals and tank and shipping container manufacturing 191 (0.06 %)
+   Other health care services 526 (0.15 %)
+   Waste management and remediation services 141 (0.04 %)
+   Sugar and confectionery products 40 (0.01 %)
+   Gasoline stations 135 (0.04 %)
+   Drycleaning and laundry services 183 (0.05 %)
+   Architectural, engineering, and related services 339 (0.10 %)
+   Radio and television broadcasting and cable 112 (0.03 %)
+   Personal and household goods repair and maintenance 116 (0.03 %)
+   Printing and related support activities 528 (0.15 %)
+   Hospitals 2300 (0.67 %)
+   Justice, public order, and safety activities 980 (0.28 %)
+   Insurance carriers and related activities 984 (0.29 %)
+   Wired telecommunications carriers 549 (0.16 %)
+   Miscellaneous paper and pulp products 93 (0.03 %)
+   Machinery, equipment, and supplies wholesalers 450 (0.13 %)
+   Miscellaneous nondurable goods wholesalers 95 (0.03 %)
+   Machinery manufacturing, n.e.c. 428 (0.12 %)
+   Electrical machinery, equipment, and supplies manufacturing, n.e.c. 695 (0.20 %)
+   Real estate 665 (0.19 %)
+   Business support services 377 (0.11 %)
+   Motor vehicles and motor vehicle equipment manufacturing 566 (0.16 %)
+   Miscellaneous wood product manufacturing 230 (0.07 %)
+   Electronic shopping and mail-order houses 39 (0.01 %)
+   Restaurants and other food services 1425 (0.41 %)
+   Miscellaneous general merchandise stores 105 (0.03 %)
+   Clothing and accessories, except shoe, stores 208 (0.06 %)
+   Traveler accommodation 653 (0.19 %)
+   Iron and steel mills and steel product manufacturing 152 (0.04 %)
+   Miscellaneous manufacturing, n.e.c. 182 (0.05 %)
+   Electric power generation transmission and distribution 372 (0.11 %)
+   Bus service and urban transit 227 (0.07 %)
+   Elementary and secondary schools 3288 (0.96 %)
+   Fruit and vegetable preserving and specialty food manufacturing 134 (0.04 %)
+   Furniture and fixtures 263 (0.08 %)
+   Alcoholic beverage wholesalers 58 (0.02 %)
+   Plastics product manufacturing 245 (0.07 %)
+   Textile product mills except carpets and rugs 85 (0.02 %)
+   Apparel, fabrics, and notions wholesalers 52 (0.02 %)
+   Aerospace product and parts manufacturing 194 (0.06 %)
+   Paperboard containers and boxes 95 (0.03 %)
+   Scientific research and development services 214 (0.06 %)
+   Colleges and universities, including junior colleges 1057 (0.31 %)
+   Non-depository credit and related activities 254 (0.07 %)
+   Services to buildings and dwellings 206 (0.06 %)
+   Employment services 281 (0.08 %)
+   Groceries and related product wholesalers 317 (0.09 %)
+   Other motor vehicle dealers 32 (0.01 %)
+   Legal services 418 (0.12 %)
+   Other telecommunication services 82 (0.02 %)
+   Cement, concrete, lime, and gypsum product manufacturing 84 (0.02 %)
+   Drugs, sundries, and chemical and allied product wholesalers 80 (0.02 %)
+   Medical equipment and supplies manufacturing 143 (0.04 %)
+   Newspaper publishers 216 (0.06 %)
+   Religious organizations 332 (0.10 %)
+   Seafood and other miscellaneous foods n.e.c. 92 (0.03 %)
+   Animal slaughtering and processing 211 (0.06 %)
+   Nonferrous metal, except aluminum, production and processing 115 (0.03 %)
+   Ship and boat building 131 (0.04 %)
+   Navigational, measuring, electromedical, and control instruments mfg. 115 (0.03 %)
+   Air transportation 310 (0.09 %)
+   Furniture and home furnishing wholesalers 19 (0.01 %)
+   Metalworking machinery manufacturing 117 (0.03 %)
+   Cut and sew apparel manufacturing 415 (0.12 %)
+   Computer and peripheral equipment manufacturing 326 (0.09 %)
+   Glass and glass product manufacturing 96 (0.03 %)
+   Agricultural implement manufacturing 67 (0.02 %)
+   Support activities for mining 175 (0.05 %)
+   Hardware, plumbing and heating equipment, and supplies wholesalers 73 (0.02 %)
+   Aluminum production and processing 58 (0.02 %)
+   Animal production 173 (0.05 %)
+   Vending machine operators 29 (0.01 %)
+   Administration of economic programs and space research 307 (0.09 %)
+   Automobile dealers 448 (0.13 %)
+   Industrial and miscellaneous chemicals 320 (0.09 %)
+   Fabric mills, except knitting 238 (0.07 %)
+   Taxi and limousine service 41 (0.01 %)
+   Unemployed, not classified by industry 483 (0.14 %)
+   Structural clay product manufacturing 21 (0.01 %)
+   Logging 31 (0.01 %)
+   Securities, commodities, funds, trusts, and other financial investments 272 (0.08 %)
+   Other general government and support 297 (0.09 %)
+   Natural gas distribution 105 (0.03 %)
+   Building material and supplies dealers 178 (0.05 %)
+   Banking and related activities 950 (0.28 %)
+   Civic, social, advocacy organizations, and grantmaking and giving services 230 (0.07 %)
+   Soap, cleaning compound, and cosmetic manufacturing 77 (0.02 %)
+   Pulp, paper, and paperboard mills 154 (0.04 %)
+   Motor vehicles, parts and supplies wholesalers 71 (0.02 %)
+   Recreational vehicle parks and camps, and rooming and boarding houses 44 (0.01 %)
+   Warehousing and storage 43 (0.01 %)
+   Water transportation 65 (0.02 %)
+   Rubber products, except tires, manufacturing 65 (0.02 %)
+   Electrical goods wholesalers 112 (0.03 %)
+   Toys, amusement, and sporting goods manufacturing 44 (0.01 %)
+   Aircraft and parts manufacturing 270 (0.08 %)
+   Miscellaneous fabricated metal products manufacturing 166 (0.05 %)
+   Metal ore mining 53 (0.02 %)
+   Metal forgings and stampings 47 (0.01 %)
+   Executive offices and legislative bodies 64 (0.02 %)
+   Department stores 653 (0.19 %)
+   Communications, audio, and video equipment manufacturing 191 (0.06 %)
+   Landscaping services 96 (0.03 %)
+   Car washes 111 (0.03 %)
+   Sporting goods, camera, and hobby and toy stores 71 (0.02 %)
+   Travel arrangement and reservation services 112 (0.03 %)
+   Administration of human resource programs 351 (0.10 %)
+   Management, scientific and technical consulting services 167 (0.05 %)
+   Savings institutions, including credit unions 80 (0.02 %)
+   Beer, wine, and liquor stores 28 (0.01 %)
+   Crop production 166 (0.05 %)
+   Recyclable material wholesalers 67 (0.02 %)
+   Hardware stores 60 (0.02 %)
+   Auto parts, accessories, and tire stores 136 (0.04 %)
+   Resin, synthetic rubber and fibers, and filaments manufacturing 74 (0.02 %)
+   Agricultural chemical manufacturing 27 (0.01 %)
+   Tobacco manufacturing 27 (0.01 %)
+   Investigation and security services 136 (0.04 %)
+   Barber shops 11 (0.00 %)
+   Cutlery and hand tool manufacturing 48 (0.01 %)
+   Coal mining 93 (0.03 %)
+   Ordnance 52 (0.02 %)
+   Tire manufacturing 35 (0.01 %)
+   Motion pictures and video industries 112 (0.03 %)
+   Household appliance manufacturing 57 (0.02 %)
+   Leather tanning and products, except footwear manufacturing 21 (0.01 %)
+   Beverage manufacturing 96 (0.03 %)
+   Foundries 60 (0.02 %)
+   Radio, TV, and computer stores 145 (0.04 %)
+   Petroleum and petroleum product wholesalers 66 (0.02 %)
+   Accounting, tax preparation, bookkeeping and payroll services 186 (0.05 %)
+   Paper and paper product wholesalers 58 (0.02 %)
+   Other amusement, gambling, and recreation industries 267 (0.08 %)
+   Household appliance stores 175 (0.05 %)
+   Other professional, scientific and technical services 76 (0.02 %)
+   Pharmacies and drug stores 158 (0.05 %)
+   Residential care facilities, without nursing 139 (0.04 %)
+   Other direct selling establishments 32 (0.01 %)
+   Animal food, grain, and oilseed milling 58 (0.02 %)
+   Knitting mills 60 (0.02 %)
+   Miscellaneous retail stores 198 (0.06 %)
+   Administration of environmental quality and housing programs 135 (0.04 %)
+   Miscellaneous nonmetallic mineral product manufacturing 62 (0.02 %)
+   Farm supplies wholesalers 53 (0.02 %)
+   Pharmaceutical and medicine manufacturing 149 (0.04 %)
+   Bowling centers 22 (0.01 %)
+   Metals and minerals, except petroleum, wholesalers 41 (0.01 %)
+   Lumber and other construction materials wholesalers 61 (0.02 %)
+   Vocational rehabilitation services 79 (0.02 %)
+   Bakeries except retail 96 (0.03 %)
+   Electronic and precision equipment repair and maintenance 36 (0.01 %)
+   Not specified metal industries 1 (0.00 %)
+   Fuel dealers 55 (0.02 %)
+   Engines, turbines, and power transmission equipment manufacturing 39 (0.01 %)
+   Pipeline transportation 11 (0.00 %)
+   Petroleum refining 65 (0.02 %)
+   Business, technical, and trade schools and training 40 (0.01 %)
+   Dairy product manufacturing 78 (0.02 %)
+   Electric and gas and other combinations 80 (0.02 %)
+   Footwear and leather goods repair 1 (0.00 %)
+   Nursing care facilities 646 (0.19 %)
+   Specialty food stores 55 (0.02 %)
+   Prefabricated wood buildings and mobile homes manufacturing 19 (0.01 %)
+   Other transportation equipment manufacturing 24 (0.01 %)
+   Footwear manufacturing 47 (0.01 %)
+   Offices of physicians 379 (0.11 %)
+   Veterinary services 70 (0.02 %)
+   Machine shops; turned product; screw nut and bolt manufacturing 29 (0.01 %)
+   Not specified manufacturing industries 7 (0.00 %)
+   Shoe stores 36 (0.01 %)
+   Advertising and related services 88 (0.03 %)
+   Other schools, instruction, and educational services 52 (0.02 %)
+   Farm product raw material wholesalers 43 (0.01 %)
+   Offices of dentists 183 (0.05 %)
+   Jewelry, luggage, and leather goods stores 56 (0.02 %)
+   Office supplies and stationary stores 68 (0.02 %)
+   Offices of optometrists 22 (0.01 %)
+   Pottery, ceramics, and related products manufacturing 18 (0.01 %)
+   Carpets and rugs manufacturing 24 (0.01 %)
+   Private households 303 (0.09 %)
+   Miscellaneous durable goods wholesalers 29 (0.01 %)
+   Lawn and garden equipment and supplies stores 18 (0.01 %)
+   Retail florists 57 (0.02 %)
+   Retail bakeries 42 (0.01 %)
+   Railroad rolling stock manufacturing 13 (0.00 %)
+   Libraries and archives 69 (0.02 %)
+   Fishing, hunting, and trapping 14 (0.00 %)
+   Beauty salons 166 (0.05 %)
+   Professional and commercial equipment and supplies wholesalers 17 (0.00 %)
+   Museums, art galleries, historical sites, and similar institutions 52 (0.02 %)
+   Child day care services 230 (0.07 %)
+   Miscellaneous petroleum and coal products 8 (0.00 %)
+   Paint, coating, and adhesives manufacturing 34 (0.01 %)
+   Office of chiropractors 24 (0.01 %)
+   Not specified wholesale trade 4 (0.00 %)
+   Textile and fabric finishing and coating mills 14 (0.00 %)
+   Funeral homes, cemeteries and crematories 19 (0.01 %)
+   Not specified utilities 3 (0.00 %)
+   Not specified retail trade 6 (0.00 %)
+   Sewing, needlework and piece goods stores 20 (0.01 %)
+   Offices of other health practitioners 12 (0.00 %)
+   Independent artists, performing arts, spectator sports, & related industries 14 (0.00 %)
+   Not specified machinery manufacturing 1 (0.00 %)
+
+------------------------------------------------------
+
+   class      indname2000_99          indname2000_99[%]   nan 0 (0.00 %)
+   Justice, public order, and safety activities 886 (0.26 %)
+   Truck transportation 632 (0.18 %)
+   Motor vehicles and motor vehicle equipment manufacturing 420 (0.12 %)
+   Miscellaneous manufacturing, n.e.c. 135 (0.04 %)
+   Construction 1978 (0.57 %)
+   Architectural, engineering, and related services 281 (0.08 %)
+   Computer systems design and related services 518 (0.15 %)
+   Industrial and miscellaneous chemicals 160 (0.05 %)
+   Automotive repair and maintenance 232 (0.07 %)
+   Pulp, paper, and paperboard mills 92 (0.03 %)
+   Securities, commodities, funds, trusts, and other financial investments 258 (0.07 %)
+   Motor vehicles, parts and supplies wholesalers 60 (0.02 %)
+   Seafood and other miscellaneous foods n.e.c. 46 (0.01 %)
+   Paint, coating, and adhesives manufacturing 16 (0.00 %)
+   Furniture and home furnishings stores 144 (0.04 %)
+   Furniture and fixtures 200 (0.06 %)
+   Offices of dentists 181 (0.05 %)
+   Business support services 387 (0.11 %)
+   Elementary and secondary schools 2892 (0.84 %)
+   Administration of economic programs and space research 264 (0.08 %)
+   Shoe stores 20 (0.01 %)
+   Fuel dealers 30 (0.01 %)
+   Real estate 541 (0.16 %)
+   Radio and television broadcasting and cable 149 (0.04 %)
+   Alcoholic beverage wholesalers 40 (0.01 %)
+   Colleges and universities, including junior colleges 891 (0.26 %)
+   Landscaping services 131 (0.04 %)
+   Grocery stores 690 (0.20 %)
+   Ship and boat building 64 (0.02 %)
+   Aircraft and parts manufacturing 176 (0.05 %)
+   Plastics product manufacturing 192 (0.06 %)
+   Electrical machinery, equipment, and supplies manufacturing, n.e.c. 491 (0.14 %)
+   Printing and related support activities 352 (0.10 %)
+   Machinery manufacturing, n.e.c. 382 (0.11 %)
+   Structural metals and tank and shipping container manufacturing 150 (0.04 %)
+   Offices of physicians 432 (0.13 %)
+   Apparel, fabrics, and notions wholesalers 37 (0.01 %)
+   Natural gas distribution 77 (0.02 %)
+   Beer, wine, and liquor stores 34 (0.01 %)
+   Waste management and remediation services 123 (0.04 %)
+   Restaurants and other food services 1266 (0.37 %)
+   Warehousing and storage 43 (0.01 %)
+   Traveler accommodation 483 (0.14 %)
+   Other health care services 649 (0.19 %)
+   Other general government and support 257 (0.07 %)
+   Miscellaneous wood product manufacturing 211 (0.06 %)
+   Wired telecommunications carriers 446 (0.13 %)
+   Nonferrous metal, except aluminum, production and processing 67 (0.02 %)
+   Individual and family services 375 (0.11 %)
+   Computer and peripheral equipment manufacturing 169 (0.05 %)
+   Automobile dealers 361 (0.10 %)
+   Private households 264 (0.08 %)
+   Water, steam, air-conditioning, and irrigation systems 96 (0.03 %)
+   Drycleaning and laundry services 142 (0.04 %)
+   Animal production 106 (0.03 %)
+   Unemployed, not classified by industry 205 (0.06 %)
+   Commercial and service industry machinery manufacturing 42 (0.01 %)
+   Crop production 123 (0.04 %)
+   Aerospace product and parts manufacturing 77 (0.02 %)
+   Bus service and urban transit 217 (0.06 %)
+   Cement, concrete, lime, and gypsum product manufacturing 66 (0.02 %)
+   Groceries and related product wholesalers 296 (0.09 %)
+   Electrical goods wholesalers 91 (0.03 %)
+   Insurance carriers and related activities 764 (0.22 %)
+   Construction mining and oil field machinery manufacturing 77 (0.02 %)
+   Executive offices and legislative bodies 67 (0.02 %)
+   Navigational, measuring, electromedical, and control instruments mfg. 83 (0.02 %)
+   Radio, TV, and computer stores 107 (0.03 %)
+   Auto parts, accessories, and tire stores 115 (0.03 %)
+   Iron and steel mills and steel product manufacturing 93 (0.03 %)
+   Hospitals 1776 (0.52 %)
+   Metal forgings and stampings 48 (0.01 %)
+   Miscellaneous fabricated metal products manufacturing 141 (0.04 %)
+   Vocational rehabilitation services 73 (0.02 %)
+   Postal Service 309 (0.09 %)
+   Legal services 318 (0.09 %)
+   Metalworking machinery manufacturing 90 (0.03 %)
+   Petroleum and petroleum product wholesalers 55 (0.02 %)
+   Administration of human resource programs 308 (0.09 %)
+   Nursing care facilities 606 (0.18 %)
+   Sugar and confectionery products 30 (0.01 %)
+   Support activities for mining 131 (0.04 %)
+   Personal and household goods repair and maintenance 110 (0.03 %)
+   Metal ore mining 32 (0.01 %)
+   Foundries 38 (0.01 %)
+   Electronic shopping and mail-order houses 50 (0.01 %)
+   Professional and commercial equipment and supplies wholesalers 164 (0.05 %)
+   Employment services 269 (0.08 %)
+   Machinery, equipment, and supplies wholesalers 205 (0.06 %)
+   Household appliance manufacturing 34 (0.01 %)
+   Medical equipment and supplies manufacturing 147 (0.04 %)
+   Public finance activities 131 (0.04 %)
+   Knitting mills 32 (0.01 %)
+   Coal mining 55 (0.02 %)
+   Non-depository credit and related activities 228 (0.07 %)
+   Communications, audio, and video equipment manufacturing 134 (0.04 %)
+   Not specified manufacturing industries 19 (0.01 %)
+   Other amusement, gambling, and recreation industries 357 (0.10 %)
+   Other telecommunication services 10 (0.00 %)
+   Miscellaneous nondurable goods wholesalers 103 (0.03 %)
+   Beverage manufacturing 71 (0.02 %)
+   Miscellaneous durable goods wholesalers 45 (0.01 %)
+   Water transportation 71 (0.02 %)
+   Agricultural implement manufacturing 41 (0.01 %)
+   Electric power generation transmission and distribution 204 (0.06 %)
+   Video tape and disk rental 18 (0.01 %)
+   Logging 34 (0.01 %)
+   Animal slaughtering and processing 189 (0.05 %)
+   Investigation and security services 125 (0.04 %)
+   Animal food, grain, and oilseed milling 61 (0.02 %)
+   Residential care facilities, without nursing 157 (0.05 %)
+   Office supplies and stationary stores 64 (0.02 %)
+   Department stores 529 (0.15 %)
+   Cut and sew apparel manufacturing 198 (0.06 %)
+   Glass and glass product manufacturing 61 (0.02 %)
+   Newspaper publishers 167 (0.05 %)
+   Air transportation 282 (0.08 %)
+   Savings institutions, including credit unions 89 (0.03 %)
+   Banking and related activities 651 (0.19 %)
+   Automotive equipment rental and leasing 43 (0.01 %)
+   Miscellaneous retail stores 205 (0.06 %)
+   Building material and supplies dealers 172 (0.05 %)
+   Pharmacies and drug stores 161 (0.05 %)
+   Forestry except logging 35 (0.01 %)
+   Household appliance stores 27 (0.01 %)
+   Car washes 37 (0.01 %)
+   Petroleum refining 58 (0.02 %)
+   Aluminum production and processing 56 (0.02 %)
+   Rail transportation 119 (0.03 %)
+   Travel arrangement and reservation services 122 (0.04 %)
+   Prefabricated wood buildings and mobile homes manufacturing 23 (0.01 %)
+   Vending machine operators 18 (0.01 %)
+   Toys, amusement, and sporting goods manufacturing 45 (0.01 %)
+   Fruit and vegetable preserving and specialty food manufacturing 83 (0.02 %)
+   Metals and minerals, except petroleum, wholesalers 21 (0.01 %)
+   Scientific research and development services 223 (0.06 %)
+   Nonmetallic mineral mining and quarrying 45 (0.01 %)
+   Gasoline stations 89 (0.03 %)
+   Bowling centers 11 (0.00 %)
+   Furniture and home furnishing wholesalers 34 (0.01 %)
+   Religious organizations 287 (0.08 %)
+   Bakeries except retail 68 (0.02 %)
+   Paperboard containers and boxes 62 (0.02 %)
+   Resin, synthetic rubber and fibers, and filaments manufacturing 45 (0.01 %)
+   Recreational vehicle parks and camps, and rooming and boarding houses 22 (0.01 %)
+   Jewelry, luggage, and leather goods stores 41 (0.01 %)
+   Other direct selling establishments 43 (0.01 %)
+   Pharmaceutical and medicine manufacturing 102 (0.03 %)
+   Cutlery and hand tool manufacturing 26 (0.01 %)
+   Administration of environmental quality and housing programs 124 (0.04 %)
+   Lumber and other construction materials wholesalers 58 (0.02 %)
+   Recyclable material wholesalers 45 (0.01 %)
+   Specialty food stores 38 (0.01 %)
+   Hardware, plumbing and heating equipment, and supplies wholesalers 95 (0.03 %)
+   Drugs, sundries, and chemical and allied product wholesalers 78 (0.02 %)
+   Sporting goods, camera, and hobby and toy stores 84 (0.02 %)
+   Paper and paper product wholesalers 47 (0.01 %)
+   Electronic and precision equipment repair and maintenance 30 (0.01 %)
+   Motion pictures and video industries 107 (0.03 %)
+   Miscellaneous general merchandise stores 78 (0.02 %)
+   Electric and gas and other combinations 53 (0.02 %)
+   Services to buildings and dwellings 174 (0.05 %)
+   Business, technical, and trade schools and training 27 (0.01 %)
+   Management, scientific and technical consulting services 179 (0.05 %)
+   Pottery, ceramics, and related products manufacturing 16 (0.00 %)
+   Miscellaneous nonmetallic mineral product manufacturing 36 (0.01 %)
+   Advertising and related services 72 (0.02 %)
+   Farm supplies wholesalers 48 (0.01 %)
+   Dairy product manufacturing 46 (0.01 %)
+   Tire manufacturing 35 (0.01 %)
+   Rubber products, except tires, manufacturing 41 (0.01 %)
+   Other professional, scientific and technical services 54 (0.02 %)
+   Accounting, tax preparation, bookkeeping and payroll services 159 (0.05 %)
+   Museums, art galleries, historical sites, and similar institutions 34 (0.01 %)
+   Retail bakeries 52 (0.02 %)
+   Other schools, instruction, and educational services 33 (0.01 %)
+   Miscellaneous paper and pulp products 77 (0.02 %)
+   Fabric mills, except knitting 88 (0.03 %)
+   Tobacco manufacturing 14 (0.00 %)
+   Hardware stores 49 (0.01 %)
+   Libraries and archives 54 (0.02 %)
+   Other motor vehicle dealers 36 (0.01 %)
+   Soap, cleaning compound, and cosmetic manufacturing 70 (0.02 %)
+   Footwear manufacturing 19 (0.01 %)
+   Miscellaneous petroleum and coal products 9 (0.00 %)
+   Labor unions 26 (0.01 %)
+   Not specified wholesale trade 5 (0.00 %)
+   Civic, social, advocacy organizations, and grantmaking and giving services 115 (0.03 %)
+   Engines, turbines, and power transmission equipment manufacturing 18 (0.01 %)
+   Support activities for agriculture and forestry 31 (0.01 %)
+   Child day care services 273 (0.08 %)
+   Not specified retail trade 23 (0.01 %)
+   Ordnance 25 (0.01 %)
+   Textile product mills except carpets and rugs 56 (0.02 %)
+   Leather tanning and products, except footwear manufacturing 16 (0.00 %)
+   Funeral homes, cemeteries and crematories 21 (0.01 %)
+   Clothing and accessories, except shoe, stores 138 (0.04 %)
+   Carpets and rugs manufacturing 21 (0.01 %)
+   Farm product raw material wholesalers 35 (0.01 %)
+   Offices of other health practitioners 14 (0.00 %)
+   Taxi and limousine service 27 (0.01 %)
+   Lawn and garden equipment and supplies stores 25 (0.01 %)
+   Beauty salons 156 (0.05 %)
+   Other transportation equipment manufacturing 21 (0.01 %)
+   Veterinary services 43 (0.01 %)
+   Textile and fabric finishing and coating mills 16 (0.00 %)
+   Not specified metal industries 3 (0.00 %)
+   Machine shops; turned product; screw nut and bolt manufacturing 19 (0.01 %)
+   Independent artists, performing arts, spectator sports, & related industries 16 (0.00 %)
+   Railroad rolling stock manufacturing 12 (0.00 %)
+   Fishing, hunting, and trapping 10 (0.00 %)
+   Music stores 20 (0.01 %)
+   Structural clay product manufacturing 19 (0.01 %)
+   Retail florists 36 (0.01 %)
+   Footwear and leather goods repair 1 (0.00 %)
+   Pipeline transportation 6 (0.00 %)
+   Agricultural chemical manufacturing 14 (0.00 %)
+   Gift, novelty, and souvenir shops 42 (0.01 %)
+   Barber shops 3 (0.00 %)
+   Offices of optometrists 19 (0.01 %)
+   Office of chiropractors 22 (0.01 %)
+   Sewing, needlework and piece goods stores 12 (0.00 %)
+   Not specified machinery manufacturing 1 (0.00 %)
+
+------------------------------------------------------
+
+   class      adj_occ2name          adj_occ2name[%]   Office and Admin Support 50635 (14.71 %)
+   . 132708 (38.55 %)
+   Computer and Math Technicians 8602 (2.50 %)
+   Managers 35696 (10.37 %)
+   Protective Service adj_occupations 7809 (2.27 %)
+   Production 29732 (8.64 %)
+   Transportation and materials moving 21277 (6.18 %)
+   Consruction, Extraction, Installation 30579 (8.88 %)
+   Community and Social Workers 6025 (1.75 %)
+   financial Operators 7702 (2.24 %)
+   Lawyers, Judges,Physicans and dentists 3835 (1.11 %)
+   Business Operators 7327 (2.13 %)
+   Farming, Fishing & Forestry 2360 (0.69 %)
+

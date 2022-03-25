@@ -5,7 +5,7 @@ from posixpath import split
 import click
 import pandas as pd
 
-TEMPLATE = f"""
+TEMPLATE = """
 1. Title: {0}
 
 2. Sources:
@@ -95,11 +95,7 @@ class DatasetDescription:
 
     def get_name(self) -> str:
         filename = self.input_filepath.split("/")[-1].split(".")[0]
-        splitted_string = [
-            filename[:i].capitalize() + filename[i:]
-            for i in range(1, len(filename)) if filename[i].isupper()
-        ]
-        return " ".join(splitted_string)
+        return filename
 
     def get_instances_count(self) -> int:
         return self.df.shape[0]
@@ -113,18 +109,28 @@ class DatasetDescription:
     def get_attribute_values(self) -> str:
         result = ""
         for column in self.df.columns:
-            result += f"   {column}: {self.df[column].unique()}\n"
+            unique_values = [
+                x if type(x) == str else str(x)
+                for x in self.df[column].unique()
+            ]
+            if len(unique_values) > 10:
+                result += f"   {column}: {', '.join(unique_values[0:9])}, ...\n"
+            else:
+                result += f"   {column}: {', '.join(unique_values)}\n"
         return result
 
     def get_class_distribution(self) -> str:
         result = ""
         for column in self.df.columns:
-            result += f"\n   class      {column}          {column}[%]"
-            result += "\n------------------------------------------------------\n"
-            for class_ in self.df[column].unique():
-                class_counts = self.df[self.df[column] == class_].shape[0]
-                total_counts = self.df.shape[0]
-                result += f"   {class_} {class_counts} ({class_counts/total_counts:.2f} %)\n"
+            data_type = self.df[column].dtype
+            if data_type in ("object", "bool"):
+                result += "\n------------------------------------------------------\n"
+                result += f"\n   class      {column}          {column}[%]"
+                for class_ in self.df[column].unique():
+                    class_counts = self.df[self.df[column] == class_].shape[0]
+                    total_counts = self.df.shape[0]
+                    result += f"   {class_} {class_counts} ({class_counts/total_counts*100:.2f} %)\n"
+
         return result
 
     def to_file(self, output_filepath: str):
