@@ -111,7 +111,7 @@ class DatasetDescription:
         for column in self.df.columns:
             unique_values = [
                 x if type(x) == str else str(x)
-                for x in self.df[column].unique()
+                for x in self.df[column].dropna().unique()
             ]
             if len(unique_values) > 10:
                 result += f"   {column}: {', '.join(unique_values[0:9])}, ...\n"
@@ -123,9 +123,10 @@ class DatasetDescription:
         result = ""
         for column in self.df.columns:
             data_type = self.df[column].dtype
-            if data_type in ("object", "bool"):
+            cardinallity = self.df[column].nunique()
+            if data_type in ("object", "bool") or cardinallity < 10:
                 result += "\n------------------------------------------------------\n"
-                result += f"\n   class      {column}          {column}[%]"
+                result += f"\n   class      {column}          {column}[%]\n"
                 for class_ in self.df[column].unique():
                     class_counts = self.df[self.df[column] == class_].shape[0]
                     total_counts = self.df.shape[0]
@@ -146,9 +147,6 @@ class DatasetDescription:
                                self.get_class_distribution())
 
 
-# @click.command()
-# @click.argument('input_filepath', type=click.Path(exists=True))
-# @click.argument('output_filepath', type=click.Path())
 def main(input_filepath, output_filepath):
     """ Runs data processing scripts to turn raw data from (../raw) into
         cleaned data ready to be analyzed (saved in ../processed).
@@ -164,3 +162,4 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, format=log_fmt)
 
     main('data/external/CurrentPopulationSurvey.csv', 'docs/datasets/')
+    main('data/external/PanelStudyIncomeDynamics.csv', 'docs/datasets/')
